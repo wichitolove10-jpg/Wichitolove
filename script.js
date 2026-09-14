@@ -1,71 +1,45 @@
-/* ==========================================================
+/* =========================================================
    ELEMENTOS
-========================================================== */
+========================================================= */
 
 const screens =
-  document.querySelectorAll(
-    ".screen"
-  );
-
+  document.querySelectorAll(".screen");
 
 const progressDots =
-  document.querySelectorAll(
-    ".progress-dot"
-  );
-
+  document.querySelectorAll(".progress-dot");
 
 const nameInput =
-  document.getElementById(
-    "nameInput"
-  );
-
+  document.getElementById("nameInput");
 
 const unlockBtn =
-  document.getElementById(
-    "unlockBtn"
-  );
-
+  document.getElementById("unlockBtn");
 
 const error =
-  document.getElementById(
-    "error"
-  );
-
+  document.getElementById("error");
 
 const nameResult =
-  document.getElementById(
-    "nameResult"
-  );
-
+  document.getElementById("nameResult");
 
 const finalName =
-  document.getElementById(
-    "finalName"
-  );
+  document.getElementById("finalName");
 
+const finalParagraph =
+  document.getElementById("finalParagraph");
 
 const whyBtn =
-  document.getElementById(
-    "whyBtn"
-  );
-
+  document.getElementById("whyBtn");
 
 const continueBtn =
-  document.getElementById(
-    "continueBtn"
-  );
-
+  document.getElementById("continueBtn");
 
 const finalBtn =
-  document.getElementById(
-    "finalBtn"
-  );
-
+  document.getElementById("finalBtn");
 
 const typeText =
-  document.getElementById(
-    "typeText"
-  );
+  document.getElementById("typeText");
+
+const cursor =
+  document.getElementById("cursor");
 
 
 let userName = "";
@@ -74,23 +48,17 @@ let typingStarted = false;
 
 
 
-/* ==========================================================
+/* =========================================================
    CAMBIAR PANTALLA
-========================================================== */
+========================================================= */
 
 function showScreen(number) {
 
-  screens.forEach(
+  screens.forEach(screen => {
 
-    screen => {
+    screen.classList.remove("active");
 
-      screen.classList.remove(
-        "active"
-      );
-
-    }
-
-  );
+  });
 
 
   const newScreen =
@@ -99,14 +67,22 @@ function showScreen(number) {
     );
 
 
-  newScreen.classList.add(
-    "active"
-  );
+  if (!newScreen) {
+
+    console.error(
+      "No existe la pantalla:",
+      number
+    );
+
+    return;
+
+  }
 
 
-  updateProgress(
-    number
-  );
+  newScreen.classList.add("active");
+
+
+  updateProgress(number);
 
 
   window.scrollTo({
@@ -124,11 +100,8 @@ function showScreen(number) {
   ) {
 
     setTimeout(
-
       startTyping,
-
       700
-
     );
 
   }
@@ -146,9 +119,9 @@ function showScreen(number) {
 
 
 
-/* ==========================================================
+/* =========================================================
    PROGRESO
-========================================================== */
+========================================================= */
 
 function updateProgress(number) {
 
@@ -172,9 +145,9 @@ function updateProgress(number) {
 
 
 
-/* ==========================================================
+/* =========================================================
    CAPITALIZAR NOMBRE
-========================================================== */
+========================================================= */
 
 function capitalizeName(name) {
 
@@ -182,19 +155,20 @@ function capitalizeName(name) {
 
     .split(" ")
 
+    .filter(
+      word =>
+        word.trim() !== ""
+    )
+
     .map(
 
       word =>
 
-        word
-          .charAt(0)
-          .toUpperCase()
+        word.charAt(0).toUpperCase()
 
         +
 
-        word
-          .slice(1)
-          .toLowerCase()
+        word.slice(1).toLowerCase()
 
     )
 
@@ -204,16 +178,13 @@ function capitalizeName(name) {
 
 
 
-/* ==========================================================
-   DESBLOQUEAR
-========================================================== */
+/* =========================================================
+   PRIMER BOTÓN
+========================================================= */
 
 unlockBtn.addEventListener(
-
   "click",
-
   unlock
-
 );
 
 
@@ -224,9 +195,10 @@ nameInput.addEventListener(
   event => {
 
     if (
-      event.key ===
-      "Enter"
+      event.key === "Enter"
     ) {
+
+      event.preventDefault();
 
       unlock();
 
@@ -237,6 +209,7 @@ nameInput.addEventListener(
 );
 
 
+
 function unlock() {
 
   const name =
@@ -244,8 +217,7 @@ function unlock() {
 
 
   if (
-    name.length <
-    2
+    name.length < 2
   ) {
 
     error.textContent =
@@ -253,6 +225,9 @@ function unlock() {
 
 
     shakeCard();
+
+
+    nameInput.focus();
 
 
     return;
@@ -265,9 +240,7 @@ function unlock() {
 
 
   userName =
-    capitalizeName(
-      name
-    );
+    capitalizeName(name);
 
 
   nameResult.textContent =
@@ -291,9 +264,9 @@ function unlock() {
 
 
 
-/* ==========================================================
-   BOTONES
-========================================================== */
+/* =========================================================
+   BOTÓN PANTALLA 2
+========================================================= */
 
 whyBtn.addEventListener(
 
@@ -316,6 +289,10 @@ whyBtn.addEventListener(
 
 
 
+/* =========================================================
+   BOTÓN PANTALLA 3
+========================================================= */
+
 continueBtn.addEventListener(
 
   "click",
@@ -323,7 +300,7 @@ continueBtn.addEventListener(
   () => {
 
     createFloatingElements(
-      16
+      15
     );
 
 
@@ -336,6 +313,10 @@ continueBtn.addEventListener(
 );
 
 
+
+/* =========================================================
+   BOTÓN FINAL
+========================================================= */
 
 finalBtn.addEventListener(
 
@@ -358,9 +339,9 @@ finalBtn.addEventListener(
 
 
 
-/* ==========================================================
+/* =========================================================
    CARTA AUTOMÁTICA
-========================================================== */
+========================================================= */
 
 function startTyping() {
 
@@ -370,21 +351,19 @@ function startTyping() {
 
   const message =
 
-`Desde que tuve la oportunidad de conocerte, hubo algo en ti que llamó mi atención de una manera muy especial.
+`${userName}, desde que tuve la oportunidad de conocerte, hubo algo en ti que llamó mi atención de una manera muy especial.
 
-Al principio pensé que simplemente era tu sonrisa o la forma tan hermosa en que te ves.
+Al principio pensé que tal vez era solamente lo hermosa que eres.
 
-Pero con el tiempo comprendí que hay algo mucho más interesante.
+Pero con el tiempo comprendí que había algo mucho más bonito detrás de eso.
 
-Me gusta tu forma de ser, la manera en que te expresas y esos pequeños detalles que hacen que seas tú.
+Me gusta tu forma de ser, la manera en que te expresas y esos pequeños detalles que te hacen diferente.
 
-No pretendo apresurar nada, ni convertir estas palabras en algo complicado.
+No pretendo apresurar nada ni convertir estas palabras en algo complicado.
 
-Simplemente quería que supieras que conocerte me parece algo verdaderamente bonito.
+Simplemente quería decirte, con toda sinceridad, que conocerte me parece algo muy bonito...
 
-Y que, sin darme cuenta, comenzaste a ocupar un lugar especial en mis pensamientos...
-
-un poco más de lo que esperaba. ♡`;
+y que, sin darme cuenta, comenzaste a gustarme más de lo que imaginaba. ♡`;
 
 
   let index =
@@ -395,6 +374,10 @@ un poco más de lo que esperaba. ♡`;
     "";
 
 
+  cursor.style.display =
+    "inline";
+
+
   function write() {
 
     if (
@@ -403,14 +386,11 @@ un poco más de lo que esperaba. ♡`;
     ) {
 
       const character =
-        message.charAt(
-          index
-        );
+        message.charAt(index);
 
 
       if (
-        character ===
-        "\n"
+        character === "\n"
       ) {
 
         typeText.innerHTML +=
@@ -428,7 +408,7 @@ un poco más de lo que esperaba. ♡`;
 
 
       let speed =
-        22;
+        21;
 
 
       if (
@@ -436,7 +416,7 @@ un poco más de lo que esperaba. ♡`;
       ) {
 
         speed =
-          145;
+          125;
 
       }
 
@@ -446,20 +426,21 @@ un poco más de lo que esperaba. ♡`;
       ) {
 
         speed =
-          70;
+          60;
 
       }
 
 
       setTimeout(
-
         write,
-
         speed
-
       );
 
     } else {
+
+      cursor.style.display =
+        "none";
+
 
       setTimeout(
 
@@ -476,7 +457,7 @@ un poco más de lo que esperaba. ♡`;
 
         },
 
-        700
+        600
 
       );
 
@@ -491,9 +472,9 @@ un poco más de lo que esperaba. ♡`;
 
 
 
-/* ==========================================================
+/* =========================================================
    CELEBRACIÓN FINAL
-========================================================== */
+========================================================= */
 
 function finalCelebration() {
 
@@ -512,7 +493,7 @@ function finalCelebration() {
 
     },
 
-    1500
+    1300
 
   );
 
@@ -527,7 +508,7 @@ function finalCelebration() {
 
     },
 
-    3000
+    2700
 
   );
 
@@ -535,9 +516,9 @@ function finalCelebration() {
 
 
 
-/* ==========================================================
+/* =========================================================
    ELEMENTOS FLOTANTES
-========================================================== */
+========================================================= */
 
 function createFloatingElements(
   amount = 15
@@ -557,7 +538,9 @@ function createFloatingElements(
 
     "✦",
 
-    "✧"
+    "✧",
+
+    "✿"
 
   ];
 
@@ -607,7 +590,7 @@ function createFloatingElements(
       10 +
 
       Math.random() *
-      21 +
+      20 +
 
       "px";
 
@@ -661,9 +644,9 @@ function createFloatingElements(
 
 
 
-/* ==========================================================
-   EFECTO DE ERROR
-========================================================== */
+/* =========================================================
+   ERROR
+========================================================= */
 
 function shakeCard() {
 
@@ -671,6 +654,13 @@ function shakeCard() {
     document.querySelector(
       "#screen1 .card"
     );
+
+
+  if (!card) {
+
+    return;
+
+  }
 
 
   card.animate(
@@ -722,9 +712,9 @@ function shakeCard() {
 
 
 
-/* ==========================================================
+/* =========================================================
    EFECTO 3D
-========================================================== */
+========================================================= */
 
 document
   .querySelectorAll(
@@ -835,9 +825,9 @@ document
 
 
 
-/* ==========================================================
-   PARTÍCULAS DE FONDO
-========================================================== */
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
 
 const canvas =
   document.getElementById(
@@ -931,8 +921,8 @@ function createParticles() {
       size:
 
         Math.random() *
-        1.4 +
-        0.3,
+        1.6 +
+        0.4,
 
       speed:
 
@@ -1019,9 +1009,9 @@ function animateParticles() {
       ctx.fillStyle =
 
         `rgba(
-          238,
-          190,
-          202,
+          229,
+          139,
+          162,
           ${particle.opacity}
         )`;
 
@@ -1044,9 +1034,9 @@ animateParticles();
 
 
 
-/* ==========================================================
+/* =========================================================
    EFECTOS AUTOMÁTICOS
-========================================================== */
+========================================================= */
 
 setInterval(
 

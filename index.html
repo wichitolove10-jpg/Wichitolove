@@ -1,331 +1,767 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f8dfe5" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f8dfe5"
+  >
+
   <title>Para alguien especial ♡</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
 <body>
 
-  <!-- Fondo -->
+  <!-- FONDO -->
+
   <div class="background">
+
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
+
   </div>
 
   <canvas id="particles"></canvas>
+
   <div class="grain"></div>
+
   <div id="floatingElements"></div>
 
-  <!-- Barra superior -->
+
+  <!-- BARRA SUPERIOR -->
+
   <header class="topbar">
+
     <div class="logo">
+
       <span>♡</span>
+
       PARA TI
+
     </div>
 
+
     <div class="progress">
+
       <span class="progress-dot active"></span>
       <span class="progress-dot"></span>
       <span class="progress-dot"></span>
       <span class="progress-dot"></span>
       <span class="progress-dot"></span>
+
     </div>
+
   </header>
+
 
   <main>
 
-    <!-- PANTALLA 1 -->
-    <section class="screen active" id="screen1">
+
+    <!-- ==================================================
+         PANTALLA 1
+    =================================================== -->
+
+    <section
+      class="screen active"
+      id="screen1"
+    >
+
       <div class="card interactive-card">
 
         <div class="card-light"></div>
 
-        <div class="symbol-circle">♡</div>
 
-        <p class="eyebrow">UN PEQUEÑO DETALLE PARA TI</p>
-
-        <h1>
-          Algunas personas
-          <span>tienen algo imposible de ignorar.</span>
-        </h1>
-
-        <p class="subtitle">
-          Y a veces, cuando alguien llama tu atención de una forma bonita,
-          nace el deseo de decírselo de una manera especial.
-        </p>
-
-        <div class="question-box">
-          <span class="question-number">01</span>
-
-          <div>
-            <small>ANTES DE CONTINUAR</small>
-            <strong>Déjame saber tu nombre</strong>
-          </div>
+        <div class="symbol-circle">
+          ♡
         </div>
 
+
+        <p class="eyebrow">
+
+          UN PEQUEÑO DETALLE PARA TI
+
+        </p>
+
+
+        <h1>
+
+          Algunas personas
+
+          <span>
+            tienen algo imposible de ignorar.
+          </span>
+
+        </h1>
+
+
+        <p class="subtitle">
+
+          Y a veces, cuando alguien llama tu atención
+          de una forma bonita, nace el deseo de decírselo
+          de una manera diferente.
+
+        </p>
+
+
+        <div class="question-box">
+
+          <span class="question-number">
+            01
+          </span>
+
+
+          <div>
+
+            <small>
+              ANTES DE CONTINUAR
+            </small>
+
+            <strong>
+              Déjame saber tu nombre
+            </strong>
+
+          </div>
+
+        </div>
+
+
         <div class="input-wrapper">
+
           <input
             type="text"
             id="nameInput"
             placeholder="Escribe tu nombre..."
             maxlength="30"
             autocomplete="off"
-          />
-          <span class="input-icon">♡</span>
+          >
+
+
+          <span class="input-icon">
+            ♡
+          </span>
+
         </div>
+
 
         <p id="error"></p>
 
-        <button class="primary-button" id="unlockBtn">
-          <span>CONTINUAR</span>
-          <span class="arrow">→</span>
+
+        <button
+          class="primary-button"
+          id="unlockBtn"
+          type="button"
+        >
+
+          <span>
+            CONTINUAR
+          </span>
+
+          <span class="arrow">
+            →
+          </span>
+
         </button>
 
+
         <p class="micro-text">
+
           Prometo que vale la pena llegar hasta el final.
+
         </p>
+
       </div>
+
     </section>
 
-    <!-- PANTALLA 2 -->
-    <section class="screen" id="screen2">
+
+
+    <!-- ==================================================
+         PANTALLA 2
+    =================================================== -->
+
+    <section
+      class="screen"
+      id="screen2"
+    >
+
       <div class="card interactive-card">
 
         <div class="card-light"></div>
 
-        <span class="sparkle s1">✦</span>
-        <span class="sparkle s2">✧</span>
-        <span class="sparkle s3">✦</span>
 
-        <div class="crown">♕</div>
+        <span class="sparkle s1">
+          ✦
+        </span>
 
-        <p class="eyebrow">CONFIRMACIÓN OFICIAL</p>
+        <span class="sparkle s2">
+          ✧
+        </span>
 
-        <h1 class="name-title">
-          <span id="nameResult">Tú</span>,
-        </h1>
+        <span class="sparkle s3">
+          ✦
+        </span>
 
-        <p class="subtitle compact">
-          después de una observación completamente seria
-          y absolutamente sincera...
-        </p>
 
-        <div class="verdict">
-          <small>RESULTADO</small>
-          <p>queda confirmado que eres</p>
-          <h2>LA MÁS HERMOSA</h2>
-
-          <div class="love-divider">
-            <span></span>
-            <b>♥</b>
-            <span></span>
-          </div>
+        <div class="crown">
+          ♕
         </div>
 
+
+        <p class="eyebrow">
+
+          CONFIRMACIÓN OFICIAL
+
+        </p>
+
+
+        <h1 class="name-title">
+
+          <span id="nameResult">
+            Tú
+          </span>,
+
+        </h1>
+
+
+        <p class="subtitle compact">
+
+          después de una observación
+          completamente seria
+          y absolutamente sincera...
+
+        </p>
+
+
+        <div class="verdict">
+
+          <small>
+            RESULTADO
+          </small>
+
+
+          <p>
+
+            queda oficialmente confirmado
+            que eres
+
+          </p>
+
+
+          <h2>
+            LA MÁS HERMOSA
+          </h2>
+
+
+          <div class="love-divider">
+
+            <span></span>
+
+            <b>
+              ♥
+            </b>
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+
         <div class="snoopy-preview">
+
           <img
             src="snoopy-flores.png"
             alt="Snoopy con flores"
             class="snoopy-preview-img"
-          />
+          >
+
+
           <p>
+
             Incluso Snoopy quiso aparecer
             con flores para acompañar esta confirmación.
+
           </p>
+
         </div>
 
-        <button class="primary-button" id="whyBtn">
-          <span>HAY ALGO MÁS</span>
-          <span>→</span>
+
+        <button
+          class="primary-button"
+          id="whyBtn"
+          type="button"
+        >
+
+          <span>
+            HAY ALGO MÁS
+          </span>
+
+          <span>
+            →
+          </span>
+
         </button>
+
       </div>
+
     </section>
 
-    <!-- PANTALLA 3 -->
-    <section class="screen" id="screen3">
+
+
+    <!-- ==================================================
+         PANTALLA 3
+    =================================================== -->
+
+    <section
+      class="screen"
+      id="screen3"
+    >
+
       <div class="card interactive-card">
 
         <div class="card-light"></div>
 
-        <p class="eyebrow">LO MÁS BONITO DE TODO</p>
+
+        <p class="eyebrow">
+
+          LO MÁS BONITO DE TODO
+
+        </p>
+
 
         <h1>
+
           No se trata solamente
-          <span>de lo hermosa que eres.</span>
+
+          <span>
+            de lo hermosa que eres.
+          </span>
+
         </h1>
 
+
         <p class="subtitle">
-          Hay detalles en una persona que hablan mucho más
-          que cualquier apariencia.
+
+          Hay detalles en una persona
+          que pueden decir mucho más
+          que cualquier fotografía.
+
         </p>
+
 
         <div class="qualities">
 
-          <article class="quality">
-            <div class="quality-icon">✦</div>
-            <small>01</small>
-            <h3>Tu sonrisa</h3>
-            <p>
-              Tiene esa facilidad de volver más bonito
-              cualquier momento.
-            </p>
-          </article>
 
           <article class="quality">
-            <div class="quality-icon">♡</div>
-            <small>02</small>
-            <h3>Tu mirada</h3>
+
+            <div class="quality-icon">
+              ✦
+            </div>
+
+            <small>
+              01
+            </small>
+
+            <h3>
+              Tu sonrisa
+            </h3>
+
             <p>
-              Hay miradas que se olvidan rápido,
-              y hay otras que permanecen.
+
+              Tiene esa facilidad de hacer
+              que cualquier momento
+              se sienta un poco más bonito.
+
             </p>
+
           </article>
 
-          <article class="quality">
-            <div class="quality-icon">✧</div>
-            <small>03</small>
-            <h3>Tu forma de ser</h3>
-            <p>
-              Mientras más se te conoce,
-              más fácil resulta admirarte.
-            </p>
-          </article>
+
 
           <article class="quality">
-            <div class="quality-icon">♥</div>
-            <small>04</small>
-            <h3>Tu esencia</h3>
+
+            <div class="quality-icon">
+              ♡
+            </div>
+
+            <small>
+              02
+            </small>
+
+            <h3>
+              Tu mirada
+            </h3>
+
             <p>
-              Tienes algo especial que no necesita explicación
-              para hacerse notar.
+
+              Hay miradas que uno simplemente ve,
+              y hay otras que cuesta olvidar.
+
             </p>
+
           </article>
+
+
+
+          <article class="quality">
+
+            <div class="quality-icon">
+              ✧
+            </div>
+
+            <small>
+              03
+            </small>
+
+            <h3>
+              Tu forma de ser
+            </h3>
+
+            <p>
+
+              Mientras más te conozco,
+              más razones encuentro
+              para admirar quién eres.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="quality">
+
+            <div class="quality-icon">
+              ♥
+            </div>
+
+            <small>
+              04
+            </small>
+
+            <h3>
+              Tu esencia
+            </h3>
+
+            <p>
+
+              Hay algo en ti que no necesita
+              explicación para hacerse notar.
+
+            </p>
+
+          </article>
+
 
         </div>
 
-        <button class="primary-button" id="continueBtn">
-          <span>QUIERO DECIRTE ALGO</span>
-          <span>→</span>
+
+        <button
+          class="primary-button"
+          id="continueBtn"
+          type="button"
+        >
+
+          <span>
+            QUIERO DECIRTE ALGO
+          </span>
+
+          <span>
+            →
+          </span>
+
         </button>
+
       </div>
+
     </section>
 
-    <!-- PANTALLA 4 -->
-    <section class="screen" id="screen4">
+
+
+    <!-- ==================================================
+         PANTALLA 4
+    =================================================== -->
+
+    <section
+      class="screen"
+      id="screen4"
+    >
+
       <div class="card interactive-card">
 
         <div class="card-light"></div>
 
-        <p class="eyebrow">UNA CONFESIÓN SINCERA</p>
+
+        <p class="eyebrow">
+
+          UNA CONFESIÓN SINCERA
+
+        </p>
+
 
         <div class="heart-scene">
+
           <div class="pulse-circle circle-1"></div>
           <div class="pulse-circle circle-2"></div>
           <div class="pulse-circle circle-3"></div>
 
-          <div class="main-heart">♥</div>
 
-          <span class="orbit o1">✦</span>
-          <span class="orbit o2">♡</span>
-          <span class="orbit o3">✧</span>
+          <div class="main-heart">
+            ♥
+          </div>
+
+
+          <span class="orbit o1">
+            ✦
+          </span>
+
+          <span class="orbit o2">
+            ♡
+          </span>
+
+          <span class="orbit o3">
+            ✧
+          </span>
+
         </div>
+
 
         <h1>
+
           Hay algo que
-          <span>quería que supieras.</span>
+
+          <span>
+            quería que supieras.
+          </span>
+
         </h1>
 
+
         <div class="letter">
+
           <div class="letter-header">
+
             <span></span>
             <span></span>
             <span></span>
+
           </div>
+
 
           <div class="letter-content">
+
             <p id="typeText"></p>
-            <span class="cursor">|</span>
+
+            <span
+              class="cursor"
+              id="cursor"
+            >
+              |
+            </span>
+
           </div>
+
         </div>
 
-        <button class="primary-button hidden-button" id="finalBtn">
-          <span>UNA ÚLTIMA COSA</span>
-          <span>♡</span>
+
+        <button
+          class="primary-button hidden-button"
+          id="finalBtn"
+          type="button"
+        >
+
+          <span>
+            UNA ÚLTIMA COSA
+          </span>
+
+          <span>
+            ♡
+          </span>
+
         </button>
+
       </div>
+
     </section>
 
-    <!-- PANTALLA 5 -->
-    <section class="screen" id="screen5">
+
+
+    <!-- ==================================================
+         PANTALLA FINAL
+    =================================================== -->
+
+    <section
+      class="screen"
+      id="screen5"
+    >
+
       <div class="card final-card interactive-card">
 
         <div class="final-light"></div>
 
+
         <div class="stars">
-          <span>✦</span>
-          <span>✧</span>
-          <span>✦</span>
+
+          <span>
+            ✦
+          </span>
+
+          <span>
+            ✧
+          </span>
+
+          <span>
+            ✦
+          </span>
+
         </div>
 
-        <p class="eyebrow">POR SI AÚN NO LO HABÍA DICHO CLARAMENTE</p>
 
-        <h1 id="finalName">...</h1>
+        <p class="eyebrow">
+
+          POR SI AÚN NO LO HABÍA DICHO CLARAMENTE
+
+        </p>
+
+
+        <h1 id="finalName">
+          ...
+        </h1>
+
 
         <p class="little-text">
-          hay algo que ya no tiene sentido seguir ocultando:
+
+          hay algo que ya no tiene sentido
+          seguir ocultando:
+
         </p>
+
+
+        <!-- SNOOPY -->
 
         <div class="snoopy-romantic-zone">
 
+
           <div class="snoopy-card left">
+
             <div class="mini-hearts">
-              <span>♥</span>
-              <span>♡</span>
-              <span>♥</span>
+
+              <span>
+                ♥
+              </span>
+
+              <span>
+                ♡
+              </span>
+
+              <span>
+                ♥
+              </span>
+
             </div>
+
 
             <img
               src="snoopy-corazones.png"
               alt="Snoopy enamorado"
               class="snoopy-main"
-            />
+            >
+
           </div>
+
+
 
           <div class="middle-heart">
-            <span>♡</span>
-            <strong>♥</strong>
-            <span>♡</span>
+
+            <span>
+              ♡
+            </span>
+
+            <strong>
+              ♥
+            </strong>
+
+            <span>
+              ♡
+            </span>
+
           </div>
 
+
+
           <div class="snoopy-card right">
+
             <div class="mini-hearts">
-              <span>♡</span>
-              <span>♥</span>
-              <span>♡</span>
+
+              <span>
+                ♡
+              </span>
+
+              <span>
+                ♥
+              </span>
+
+              <span>
+                ♡
+              </span>
+
             </div>
+
 
             <img
               src="snoopy-flores.png"
               alt="Snoopy con flores"
               class="snoopy-main"
-            />
+            >
+
           </div>
 
+
         </div>
+
+
 
         <div class="final-confession">
-          <span>ME</span>
-          <strong>GUSTAS</strong>
-          <b>♥</b>
+
+          <span>
+            ME
+          </span>
+
+          <strong>
+            GUSTAS
+          </strong>
+
+          <b>
+            ♥
+          </b>
+
         </div>
 
-        <p class="final-paragraph">
+
+
+        <p
+          class="final-paragraph"
+          id="finalParagraph"
+        >
+
           Me pareces una persona
-          <strong>verdaderamente hermosa,</strong>
+
+          <strong>
+            verdaderamente hermosa,
+          </strong>
+
           pero más allá de eso,
           me gusta la manera en que poco a poco
           he ido descubriendo quién eres.
@@ -335,23 +771,65 @@
           Hay algo muy bonito en ti,
           en tu forma de ser,
           en tu presencia
-          y en esos pequeños detalles que hacen que seas especial.
+          y en esos pequeños detalles
+          que te hacen especial.
 
           <br><br>
 
           Por eso quería que supieras esto
           de una manera diferente.
+
         </p>
 
-       <div class="signature">
-  <span>♡</span>
 
-  <p>
-    Para alguien que, sin proponérselo,
-    comenzó a parecerme muy especial.
-  </p>
 
-  <small>
-    — Con cariño, Luis Guillermo López
-  </small>
-</div>
+        <div class="signature">
+
+          <span>
+            ♡
+          </span>
+
+
+          <p>
+
+            Para alguien que,
+            sin proponérselo,
+            comenzó a parecerme muy especial.
+
+          </p>
+
+
+          <small>
+
+            — Con cariño,
+            Luis Guillermo López
+
+          </small>
+
+        </div>
+
+
+        <p class="ending-text">
+
+          HECHO CON CARIÑO ♡
+
+        </p>
+
+
+        <!--
+          AQUÍ TERMINA.
+          NO HAY BOTÓN PARA REGRESAR.
+        -->
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

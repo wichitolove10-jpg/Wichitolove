@@ -1,835 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#f8dfe5"
-  >
-
-  <title>Para alguien especial ♡</title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4b8" />
+  <title>Flores amarillas para ti 💛</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <!-- FONDO -->
-
-  <div class="background">
-
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-  </div>
-
-  <canvas id="particles"></canvas>
-
-  <div class="grain"></div>
-
-  <div id="floatingElements"></div>
-
-
-  <!-- BARRA SUPERIOR -->
+  <div class="sky-glow glow-one"></div>
+  <div class="sky-glow glow-two"></div>
+  <div id="petals"></div>
+  <div id="sparkles"></div>
 
   <header class="topbar">
-
-    <div class="logo">
-
-      <span>♡</span>
-
-      PARA TI
-
+    <div class="brand"><span>✿</span> PARA TI</div>
+    <div class="progress" aria-label="Progreso">
+      <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
     </div>
-
-
-    <div class="progress">
-
-      <span class="progress-dot active"></span>
-      <span class="progress-dot"></span>
-      <span class="progress-dot"></span>
-      <span class="progress-dot"></span>
-      <span class="progress-dot"></span>
-
-    </div>
-
   </header>
 
-
   <main>
-
-
-    <!-- ==================================================
-         PANTALLA 1
-    =================================================== -->
-
-    <section
-      class="screen active"
-      id="screen1"
-    >
-
-      <div class="card interactive-card">
-
-        <div class="card-light"></div>
-
-
-        <div class="symbol-circle">
-          ♡
-        </div>
-
-
-        <p class="eyebrow">
-
-          UN PEQUEÑO DETALLE PARA TI
-
+    <!-- 1 -->
+    <section class="screen active" id="screen1">
+      <article class="card hero-card interactive-card">
+        <div class="card-shine"></div>
+        <div class="date-badge">21 DE SEPTIEMBRE</div>
+        <div class="flower-emblem">🌻</div>
+        <p class="eyebrow">HOY HABÍA UNA RAZÓN PARA REGALAR FLORES AMARILLAS</p>
+        <h1>Y yo pensé <span>en ti.</span></h1>
+        <p class="lead">
+          Tal vez estas flores no puedan llegar a tus manos desde una pantalla,
+          pero la intención sí puede llegar hasta ti.
         </p>
-
-
-        <h1>
-
-          Algunas personas
-
-          <span>
-            tienen algo imposible de ignorar.
-          </span>
-
-        </h1>
-
-
-        <p class="subtitle">
-
-          Y a veces, cuando alguien llama tu atención
-          de una forma bonita, nace el deseo de decírselo
-          de una manera diferente.
-
-        </p>
-
-
-        <div class="question-box">
-
-          <span class="question-number">
-            01
-          </span>
-
-
-          <div>
-
-            <small>
-              ANTES DE CONTINUAR
-            </small>
-
-            <strong>
-              Déjame saber tu nombre
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="input-wrapper">
-
-          <input
-            type="text"
-            id="nameInput"
-            placeholder="Escribe tu nombre..."
-            maxlength="30"
-            autocomplete="off"
-          >
-
-
-          <span class="input-icon">
-            ♡
-          </span>
-
-        </div>
-
-
-        <p id="error"></p>
-
-
-        <button
-          class="primary-button"
-          id="unlockBtn"
-          type="button"
-        >
-
-          <span>
-            CONTINUAR
-          </span>
-
-          <span class="arrow">
-            →
-          </span>
-
+        <img class="snoopy-intro" src="assets/snoopy-flores.png" alt="Snoopy con flores amarillas" />
+        <button class="primary" id="startBtn" type="button">
+          <span>ABRIR ESTE DETALLE</span><span>→</span>
         </button>
-
-
-        <p class="micro-text">
-
-          Prometo que vale la pena llegar hasta el final.
-
-        </p>
-
-      </div>
-
+        <p class="microcopy">Hay algo bonito preparado para ti 💛</p>
+      </article>
     </section>
 
+    <!-- 2 -->
+    <section class="screen" id="screen2">
+      <article class="card interactive-card">
+        <div class="card-shine"></div>
+        <p class="eyebrow">ANTES DE ENTREGARTE ESTAS FLORES</p>
+        <h1>Quiero ponerles <span>tu nombre.</span></h1>
+        <p class="lead">Escribe tu nombre y deja que la página haga el resto.</p>
 
-
-    <!-- ==================================================
-         PANTALLA 2
-    =================================================== -->
-
-    <section
-      class="screen"
-      id="screen2"
-    >
-
-      <div class="card interactive-card">
-
-        <div class="card-light"></div>
-
-
-        <span class="sparkle s1">
-          ✦
-        </span>
-
-        <span class="sparkle s2">
-          ✧
-        </span>
-
-        <span class="sparkle s3">
-          ✦
-        </span>
-
-
-        <div class="crown">
-          ♕
+        <div class="field-label"><span>01</span><div><small>UN DETALLE PERSONAL</small><strong>¿Cómo te llamas?</strong></div></div>
+        <div class="input-wrap">
+          <input id="nameInput" type="text" maxlength="30" autocomplete="off" placeholder="Escribe tu nombre..." />
+          <span>✿</span>
         </div>
-
-
-        <p class="eyebrow">
-
-          CONFIRMACIÓN OFICIAL
-
-        </p>
-
-
-        <h1 class="name-title">
-
-          <span id="nameResult">
-            Tú
-          </span>,
-
-        </h1>
-
-
-        <p class="subtitle compact">
-
-          después de una observación
-          completamente seria
-          y absolutamente sincera...
-
-        </p>
-
-
-        <div class="verdict">
-
-          <small>
-            RESULTADO
-          </small>
-
-
-          <p>
-
-            queda oficialmente confirmado
-            que eres
-
-          </p>
-
-
-          <h2>
-            LA MÁS HERMOSA
-          </h2>
-
-
-          <div class="love-divider">
-
-            <span></span>
-
-            <b>
-              ♥
-            </b>
-
-            <span></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="snoopy-preview">
-
-          <img
-            src="snoopy-flores.png"
-            alt="Snoopy con flores"
-            class="snoopy-preview-img"
-          >
-
-
-          <p>
-
-            Incluso Snoopy quiso aparecer
-            con flores para acompañar esta confirmación.
-
-          </p>
-
-        </div>
-
-
-        <button
-          class="primary-button"
-          id="whyBtn"
-          type="button"
-        >
-
-          <span>
-            HAY ALGO MÁS
-          </span>
-
-          <span>
-            →
-          </span>
-
-        </button>
-
-      </div>
-
+        <p id="nameError" class="error"></p>
+        <button class="primary" id="nameBtn" type="button"><span>CONTINUAR</span><span>→</span></button>
+      </article>
     </section>
 
+    <!-- 3 -->
+    <section class="screen" id="screen3">
+      <article class="card bouquet-card interactive-card">
+        <div class="card-shine"></div>
+        <div class="small-sparkle sp1">✦</div><div class="small-sparkle sp2">✧</div><div class="small-sparkle sp3">✦</div>
+        <p class="eyebrow">AHORA SÍ</p>
+        <h1><span id="nameResult">Tú</span>, estas flores amarillas son para ti.</h1>
+        <p class="lead">Porque hay personas que logran hacer que un día cualquiera se sienta un poco más especial.</p>
 
-
-    <!-- ==================================================
-         PANTALLA 3
-    =================================================== -->
-
-    <section
-      class="screen"
-      id="screen3"
-    >
-
-      <div class="card interactive-card">
-
-        <div class="card-light"></div>
-
-
-        <p class="eyebrow">
-
-          LO MÁS BONITO DE TODO
-
-        </p>
-
-
-        <h1>
-
-          No se trata solamente
-
-          <span>
-            de lo hermosa que eres.
-          </span>
-
-        </h1>
-
-
-        <p class="subtitle">
-
-          Hay detalles en una persona
-          que pueden decir mucho más
-          que cualquier fotografía.
-
-        </p>
-
-
-        <div class="qualities">
-
-
-          <article class="quality">
-
-            <div class="quality-icon">
-              ✦
-            </div>
-
-            <small>
-              01
-            </small>
-
-            <h3>
-              Tu sonrisa
-            </h3>
-
-            <p>
-
-              Tiene esa facilidad de hacer
-              que cualquier momento
-              se sienta un poco más bonito.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="quality">
-
-            <div class="quality-icon">
-              ♡
-            </div>
-
-            <small>
-              02
-            </small>
-
-            <h3>
-              Tu mirada
-            </h3>
-
-            <p>
-
-              Hay miradas que uno simplemente ve,
-              y hay otras que cuesta olvidar.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="quality">
-
-            <div class="quality-icon">
-              ✧
-            </div>
-
-            <small>
-              03
-            </small>
-
-            <h3>
-              Tu forma de ser
-            </h3>
-
-            <p>
-
-              Mientras más te conozco,
-              más razones encuentro
-              para admirar quién eres.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="quality">
-
-            <div class="quality-icon">
-              ♥
-            </div>
-
-            <small>
-              04
-            </small>
-
-            <h3>
-              Tu esencia
-            </h3>
-
-            <p>
-
-              Hay algo en ti que no necesita
-              explicación para hacerse notar.
-
-            </p>
-
-          </article>
-
-
+        <div class="bouquet" aria-hidden="true">
+          <div class="stem stem1"></div><div class="stem stem2"></div><div class="stem stem3"></div>
+          <div class="bloom bloom1"><span></span></div>
+          <div class="bloom bloom2"><span></span></div>
+          <div class="bloom bloom3"><span></span></div>
+          <div class="leaf leaf1"></div><div class="leaf leaf2"></div><div class="leaf leaf3"></div>
+          <div class="ribbon">♡</div>
         </div>
 
+        <div class="snoopy-note">
+          <img src="assets/snoopy-flores.png" alt="Snoopy con flores" />
+          <p>Hasta Snoopy llegó con flores para acompañar el detalle.</p>
+        </div>
 
-        <button
-          class="primary-button"
-          id="continueBtn"
-          type="button"
-        >
-
-          <span>
-            QUIERO DECIRTE ALGO
-          </span>
-
-          <span>
-            →
-          </span>
-
-        </button>
-
-      </div>
-
+        <button class="primary" id="meaningBtn" type="button"><span>HAY ALGO MÁS</span><span>→</span></button>
+      </article>
     </section>
 
+    <!-- 4 -->
+    <section class="screen" id="screen4">
+      <article class="card interactive-card">
+        <div class="card-shine"></div>
+        <p class="eyebrow">LO QUE QUIERO DECIR CON ELLAS</p>
+        <h1>No son solo flores. <span>Son un pequeño mensaje.</span></h1>
+        <p class="lead">Hoy quise que cada una representara algo bonito que me haces pensar.</p>
 
-
-    <!-- ==================================================
-         PANTALLA 4
-    =================================================== -->
-
-    <section
-      class="screen"
-      id="screen4"
-    >
-
-      <div class="card interactive-card">
-
-        <div class="card-light"></div>
-
-
-        <p class="eyebrow">
-
-          UNA CONFESIÓN SINCERA
-
-        </p>
-
-
-        <div class="heart-scene">
-
-          <div class="pulse-circle circle-1"></div>
-          <div class="pulse-circle circle-2"></div>
-          <div class="pulse-circle circle-3"></div>
-
-
-          <div class="main-heart">
-            ♥
-          </div>
-
-
-          <span class="orbit o1">
-            ✦
-          </span>
-
-          <span class="orbit o2">
-            ♡
-          </span>
-
-          <span class="orbit o3">
-            ✧
-          </span>
-
+        <div class="meaning-grid">
+          <div class="meaning"><div class="icon">☀</div><small>01</small><h3>Alegría</h3><p>Porque hay personas que iluminan un momento con algo tan simple como una sonrisa.</p></div>
+          <div class="meaning"><div class="icon">✿</div><small>02</small><h3>Cariño</h3><p>Porque un detalle sincero también puede decir “pensé en ti” sin necesitar demasiadas palabras.</p></div>
+          <div class="meaning"><div class="icon">♡</div><small>03</small><h3>Admiración</h3><p>Porque además de hermosa, hay una forma de ser en ti que me gusta seguir conociendo.</p></div>
+          <div class="meaning"><div class="icon">✦</div><small>04</small><h3>Un recuerdo</h3><p>Para que cuando pienses en este día, recuerdes que alguien quiso sacarte una sonrisa.</p></div>
         </div>
 
-
-        <h1>
-
-          Hay algo que
-
-          <span>
-            quería que supieras.
-          </span>
-
-        </h1>
-
-
-        <div class="letter">
-
-          <div class="letter-header">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-          </div>
-
-
-          <div class="letter-content">
-
-            <p id="typeText"></p>
-
-            <span
-              class="cursor"
-              id="cursor"
-            >
-              |
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <button
-          class="primary-button hidden-button"
-          id="finalBtn"
-          type="button"
-        >
-
-          <span>
-            UNA ÚLTIMA COSA
-          </span>
-
-          <span>
-            ♡
-          </span>
-
-        </button>
-
-      </div>
-
+        <button class="primary" id="letterBtn" type="button"><span>QUIERO DECIRTE ALGO</span><span>→</span></button>
+      </article>
     </section>
 
+    <!-- 5 -->
+    <section class="screen" id="screen5">
+      <article class="card final-card interactive-card">
+        <div class="final-sun"></div>
+        <div class="final-stars"><span>✦</span><span>✧</span><span>✦</span></div>
+        <p class="eyebrow">UNA ÚLTIMA COSA</p>
+        <h1 id="finalName">...</h1>
+        <p class="final-kicker">estas flores llevan tu nombre 💛</p>
 
-
-    <!-- ==================================================
-         PANTALLA FINAL
-    =================================================== -->
-
-    <section
-      class="screen"
-      id="screen5"
-    >
-
-      <div class="card final-card interactive-card">
-
-        <div class="final-light"></div>
-
-
-        <div class="stars">
-
-          <span>
-            ✦
-          </span>
-
-          <span>
-            ✧
-          </span>
-
-          <span>
-            ✦
-          </span>
-
+        <div class="final-illustration">
+          <div class="halo"></div>
+          <img src="assets/snoopy-flores.png" alt="Snoopy con flores amarillas" />
+          <span class="float-flower f1">🌼</span><span class="float-flower f2">🌻</span><span class="float-flower f3">✿</span><span class="float-flower f4">💛</span>
         </div>
 
-
-        <p class="eyebrow">
-
-          POR SI AÚN NO LO HABÍA DICHO CLARAMENTE
-
-        </p>
-
-
-        <h1 id="finalName">
-          ...
-        </h1>
-
-
-        <p class="little-text">
-
-          hay algo que ya no tiene sentido
-          seguir ocultando:
-
-        </p>
-
-
-        <!-- SNOOPY -->
-
-        <div class="snoopy-romantic-zone">
-
-
-          <div class="snoopy-card left">
-
-            <div class="mini-hearts">
-
-              <span>
-                ♥
-              </span>
-
-              <span>
-                ♡
-              </span>
-
-              <span>
-                ♥
-              </span>
-
-            </div>
-
-
-            <img
-              src="snoopy-corazones.png"
-              alt="Snoopy enamorado"
-              class="snoopy-main"
-            >
-
-          </div>
-
-
-
-          <div class="middle-heart">
-
-            <span>
-              ♡
-            </span>
-
-            <strong>
-              ♥
-            </strong>
-
-            <span>
-              ♡
-            </span>
-
-          </div>
-
-
-
-          <div class="snoopy-card right">
-
-            <div class="mini-hearts">
-
-              <span>
-                ♡
-              </span>
-
-              <span>
-                ♥
-              </span>
-
-              <span>
-                ♡
-              </span>
-
-            </div>
-
-
-            <img
-              src="snoopy-flores.png"
-              alt="Snoopy con flores"
-              class="snoopy-main"
-            >
-
-          </div>
-
-
+        <div class="letter-box">
+          <div class="letter-top"><span></span><span></span><span></span></div>
+          <p id="typedLetter"></p><span id="cursor" class="cursor">|</span>
         </div>
-
-
-
-        <div class="final-confession">
-
-          <span>
-            ME
-          </span>
-
-          <strong>
-            GUSTAS
-          </strong>
-
-          <b>
-            ♥
-          </b>
-
-        </div>
-
-
-
-        <p
-          class="final-paragraph"
-          id="finalParagraph"
-        >
-
-          Me pareces una persona
-
-          <strong>
-            verdaderamente hermosa,
-          </strong>
-
-          pero más allá de eso,
-          me gusta la manera en que poco a poco
-          he ido descubriendo quién eres.
-
-          <br><br>
-
-          Hay algo muy bonito en ti,
-          en tu forma de ser,
-          en tu presencia
-          y en esos pequeños detalles
-          que te hacen especial.
-
-          <br><br>
-
-          Por eso quería que supieras esto
-          de una manera diferente.
-
-        </p>
-
-
 
         <div class="signature">
-
-          <span>
-            ♡
-          </span>
-
-
-          <p>
-
-            Para alguien que,
-            sin proponérselo,
-            comenzó a parecerme muy especial.
-
-          </p>
-
-
-          <small>
-
-            — Con cariño,
-            Luis Guillermo López
-
-          </small>
-
+          <span>🌻</span>
+          <p>Para ti, porque hoy las flores amarillas tenían que llevar tu nombre.</p>
+          <small>— Con cariño, Luis Guillermo López</small>
         </div>
 
-
-        <p class="ending-text">
-
-          HECHO CON CARIÑO ♡
-
-        </p>
-
-
-        <!--
-          AQUÍ TERMINA.
-          NO HAY BOTÓN PARA REGRESAR.
-        -->
-
-      </div>
-
+        <p class="ending">21 DE SEPTIEMBRE · HECHO CON CARIÑO 💛</p>
+      </article>
     </section>
-
-
   </main>
 
-
   <script src="script.js"></script>
-
 </body>
 </html>
